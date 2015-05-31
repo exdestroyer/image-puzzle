@@ -1,0 +1,78 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> 移动拼图 </title>
+
+<link rel="stylesheet" href="css/puzzleGame.css" />
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<!-- 以下两个js文件，一个是面向过程开发(process)，一个是面向对象开发(object)，修改引入文件既可以切换不同开发代码 -->
+<!-- <script src="js/puzzleGame_process.js"></script> -->
+<script type="text/javascript" src="js/jquery.drag.js"></script>
+<script type="text/javascript" src="js/puzzleGame_object.js"></script>
+<script src="js/heartcode-canvasloader-min-0.9.1.js"></script>
+	<style type="text/css">
+		.wrapper {
+			position:absolute;
+			top:50%;
+			left:50%;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap">
+
+		<div id="right">
+			<div id="imgArea"><div id="canvasloader-container" class="wrapper"></div></div>
+		</div>
+				<div id="left">
+			<ul>
+				<li id="start">
+					<span>Finish Puzzle</span>
+				</li>
+				<li id="level">
+					<span>16 Blocks</span>
+				</li>
+				<li id="show">
+					<span>Block Count</span>
+
+					<p id="nums" <p>
+				</li>
+
+				<li id="time">
+					<span id="curTime">0</span>
+					
+				</li>
+
+				<li id="steps">
+					<span id="curStep">0</span>
+					
+				</li>
+		
+			</ul>
+		</div>
+	</div>
+		<script type="text/javascript">
+		var cl = new CanvasLoader('canvasloader-container');
+		cl.setColor('#376a7a'); // default is '#000000'
+		cl.setShape('spiral'); // default is 'oval'
+		cl.setDiameter(80); // default is 40
+		cl.setDensity(80); // default is 40
+		cl.setSpeed(8); // default is 2
+		cl.show(); // Hidden by default
+		
+		// This bit is only for positioning - not necessary
+		  var loaderObj = document.getElementById("canvasLoader");
+  		loaderObj.style.position = "absolute";
+  		loaderObj.style["top"] = cl.getDiameter() * -0.5 + "px";
+  		loaderObj.style["left"] = cl.getDiameter() * -0.5 + "px";
+    </script>
+</body>
+
+
+
+</html>
